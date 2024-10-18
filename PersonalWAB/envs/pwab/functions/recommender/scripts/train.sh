@@ -1,0 +1,1 @@
+python main.py --dataset=review --train_dir=0910 --maxlen=30 --dropout_rate=0.5 --device=cuda --num_epochs 1000

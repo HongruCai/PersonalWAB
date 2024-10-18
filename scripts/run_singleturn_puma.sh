@@ -1,0 +1,15 @@
+python run.py \
+--env pwab \
+--model finetune/llama \
+--user_mode no \
+--user_model gpt-4o-mini \
+--agent_strategy puma \
+--agent_memory taskspe \
+--memory_length 100 \
+--task_split test \
+--max_concurrency 1 \
+--max_steps -1 \
+--end_index 5 \
+--puma_function_file PUMA/output/res/tool_results_768.json \
+--puma_generate 1 \
+--puma_model_path PUMA/output/input/Llama-2-7b-chat-hf/20241007_1849_tool_input_data3.json_ep10_lr0.0003_bch1_768/checkpoint-1724 \
