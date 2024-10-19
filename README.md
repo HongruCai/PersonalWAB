@@ -49,6 +49,7 @@ The dataset is available in "PersonalWAB/envs/pwab/data".
 To run experiments on the **PersonalWAB** benchmark, use the following command:
 
 ```bash
+source scripts/set_api_key.sh # Set your OpenAI API key
 bash scripts/run_singleturn.sh  # Single-turn track
 bash scripts/run_multiturn.sh   # Multi-turn track
 ```
