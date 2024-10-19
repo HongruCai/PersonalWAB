@@ -113,7 +113,8 @@ STEP 7: Evaluate the DPO model in PersonalWAB
 cd ..
 bash scripts/run_singleturn_puma.sh
 ```
-Or you can also generate the final function and parameter results and use scripts/fast_test.sh to see the performance.
+Or you can also generate the final function and parameter results and use scripts/fast_test.sh to see the performance without recording the single instruction results.
+
 ---
 
 ## Citation
