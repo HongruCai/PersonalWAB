@@ -21,7 +21,6 @@ To install the required dependencies, run:
 pip install -r requirements.txt
 ```
 
----
 
 ## PersonalWAB Benchmark
 
@@ -40,7 +39,6 @@ The dataset is available in "PersonalWAB/envs/pwab/data".
 **Personalized Recommendation**: Recommend items based on implicit preferences.  
 **Personalized Review Generation**: Generate reviews aligned with user preferences.
 
----
 
 ## Usage
 
@@ -56,7 +54,6 @@ bash scripts/run_multiturn.sh   # Multi-turn track
 
 You can modify agent strategies, memory mechanisms, and parameters in the scripts to explore various configurations.
 
----
 
 ## Benchmark Evaluation
 
@@ -65,8 +62,6 @@ The **PersonalWAB** benchmark supports two evaluation tracks: single-turn and mu
 - **Tool Accuracy**: The accuracy of selecting appropriate web functions.
 - **Result Accuracy**: The relevance of returned results to user preferences.
 - **Avg. Steps**: The average number of actions executed to complete a user instruction.
-
----
 
 ## PUMA Framework
 
@@ -116,14 +111,10 @@ bash scripts/run_singleturn_puma.sh
 ```
 Or you can also generate the final function and parameter results and use scripts/fast_test.sh to see the performance without recording the single instruction results.
 
----
-
 ## Citation
 
 If you use this code or dataset in your research, please cite our paper:
 
-
----
 
 ## Contact
 

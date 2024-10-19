@@ -68,9 +68,9 @@ def batch_inference(model, tokenizer, inputs, labels, batch_size, device, args, 
                     #print(tokenizer.decode(beams[0], skip_special_tokens=True).strip())
 
                     if args.test_on == 'function':
-                        beams = [tokenizer.decode(x, skip_special_tokens=True).strip().split('Tool:\n')[-1] for x in beams]
+                        beams = [tokenizer.decode(x, skip_special_tokens=True).strip().split('### Tool:\n')[-1] for x in beams]
                     elif args.test_on == 'param':
-                        beams = [tokenizer.decode(x, skip_special_tokens=True).strip().split('### Tool Input:\n')[-1] for x in beams]
+                        beams = [tokenizer.decode(x, skip_special_tokens=True).strip().split('### Tool Parameter:\n')[-1] for x in beams]
 
                     res.extend(beams)
             res = gather_object(res)

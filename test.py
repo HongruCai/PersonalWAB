@@ -12,10 +12,10 @@ from tabulate import tabulate
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate PWA tasks")
     parser.add_argument('--evaluate_dpo', type=str, default='False', help='Whether to evaluate DPO')
-    parser.add_argument('--task_file', type=str, default='PersonalWAB/envs/pwa/data/user_instructions.json', help='Path to task file')
+    parser.add_argument('--task_file', type=str, default='PersonalWAB/envs/pwab/data/user_instructions.json', help='Path to task file')
     parser.add_argument('--param_file', type=str, default='PUMA/output/res/', help='Path to tool input file')
     parser.add_argument('--function_file', type=str, default='PUMA/output/', help='Path to tool selected file')
-    parser.add_argument('--all_products', type=str, default='PersonalWAB/envs/pwa/data/all_products.json', help='Path to all products file')
+    parser.add_argument('--all_products', type=str, default='data/Reviews/all_products.json', help='Path to all products file')
     parser.add_argument('--dpo_output', type=str, default='PUMA/data/dpo_data.json', help='Path to DPO output file')
     return parser.parse_args()
 
@@ -118,35 +118,33 @@ else:
             continue
         instructions = task['task']
         target_asin = task['target']['product_info']['parent_asin']
+        score = 0
         if task_type == 'search':
             query = tool_input[instructions]
             for q in query:
                 res = search_product_by_query(data={}, query=q)
-                score = 0
                 for i in range(len(res)):
                     if target_asin in res[i]:
                         score = 1 - i/len(res)
                         break      
-            final_results['search'].append(score)
         elif task_type == 'recommend':
             history = tool_input[instructions]
             for h in history:
                 h_ = [item.strip() for item in h.split(',')]
                 h_ = list(set(h_))
                 res = get_recommendations_by_history(data={'all_products':all_products}, product_sequence=h_)
-                score = 0
                 for i in range(len(res)):
                     if target_asin in res[i]:
                         score = 1 - i/len(res)
                         break
-            final_results['recommend'].append(score)
         else:
             review = tool_input[instructions]
             for r in review:
                 target_review = task['target']['review']['text']
                 agent_review = r
                 similarity = compute_similarity(target_review, agent_review)
-            final_results['review'].append(similarity)
+                score = similarity
+        final_results[gt_task_type].append(score)
 
     combined_data = [
         ['Search', len(final_results['search']), sum(tool_accuracy['search']) / len(tool_accuracy['search']), sum(final_results['search']) / len(final_results['search'])],

@@ -89,8 +89,8 @@ def get_recommendations_by_history(data: Dict[str, Any], product_sequence: List[
     item_sequence = [product_id_map.get(product_asin, -1) for product_asin in product_sequence if product_asin in product_id_map]
     if len(item_sequence) == 0:
         return recommendations  
-    # if len(item_sequence) < 4:
-    #     item_sequence = [item_sequence[0]] * 3 + item_sequence
+    if len(item_sequence) < 4:
+        item_sequence = [item_sequence[0]] * 3 + item_sequence
 
     item_sequence = item_sequence[-maxlen:]  
     

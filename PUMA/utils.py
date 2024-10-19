@@ -108,7 +108,7 @@ def load_param_prompt(data_file, tool_file, split, mem_token_length, tokenizer):
         tokenized_memory = tokenizer(mem, return_tensors=None, truncation=True, max_length=mem_token_length)
         memory_text = tokenizer.decode(tokenized_memory["input_ids"], skip_special_tokens=True)
         input_text = input_text.replace('<Memory>', memory_text)
-        input_text = input_text.replace('<Tool>', tool_file[task][0].replace('\n', ''))
+        input_text = input_text.replace('<Tool>', tool_file[task][0])
         tool_input = item['target']
         
         tasks.append(task)

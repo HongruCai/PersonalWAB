@@ -54,15 +54,19 @@ def main():
             truncated_full_text = prefix_text.replace('<Memory>', memory_text_truncated).replace('<Tool>', tool_text)
 
             if task_type == 'search':
-                #target = generate_search_query(input_text, mem) if split == 'train' else product_info['title']
-                target = [x['target'] for x in tempfile[split] if x['instruction'] == input_text][0]
+                target = generate_search_query(input_text, mem) if split == 'train' else product_info['title']
                 # no label for test set, so simply set to title, you can generate as well
+                # or you may use taskspe memory agent's response as target
             elif task_type == 'recommend':
                 temp =[]
                 for history_item in ori_history:
                     if history_item['product_info']['main_category'] == product_info['main_category']:
                         temp.append(history_item['product_info']['parent_asin'])
-                target = ', '.join(temp[-30:])
+                if len(temp) != 0:
+                    target = ', '.join(temp[-30:])
+                else:
+                    target = product_info['parent_asin']
+                # you can generate the target by gpt as well
             else:
                 target = task['target']['review']['text']
             

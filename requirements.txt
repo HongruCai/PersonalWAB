@@ -5,6 +5,7 @@ httpx
 matplotlib
 numpy
 openai
+openjdk
 pandas
 peft
 pyserini
