@@ -5,6 +5,7 @@ accelerate launch test_llama.py \
     --float16 \
     --test_on param \
     --batch_size 4 \
-    --max_new_tokens 512 \
+    --max_new_tokens 256 \
+    --memory_token_length 768 \
     --tool_file output/ \
     --res_file output/

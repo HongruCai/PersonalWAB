@@ -2,15 +2,19 @@
 
 ## Overview
 
-This repository provides the implementation of **PUMA** (Personalized User Memory-enhanced Alignment) and the **PersonalWAB** (Personalized Web Agent Benchmark). This project addresses the limitations of existing Large Language Model (LLM)-based Web agents by incorporating personalized data (e.g., user profiles, historical web behaviors) to enhance the understanding of user instructions and customize action execution.
+This repository provides the implementation of **PUMA** (Personalized User Memory-enhanced Alignment) and the **PersonalWAB** (Personalized Web Agent Benchmark). The project addresses the limitations of current LLM-based Web agents by incorporating personalized data, such as user profiles and historical web behaviors, to improve user instruction understanding and customize actions.
+
+The benchmark focuses on personalized Web agent tasks like personalized search, recommendation, and review generation.
+
+We will maintain a **leaderboard** to allow researchers to submit and compare their models' performance on PersonalWAB. Details on how to participate and submit results will be released soon.
 
 ## Installation
 
 ### Requirements
 
-- Python 3.9
-- PyTorch
-- [List other libraries or tools your project depends on]
+- Python 3.11
+- PyTorch 2.4.1
+- CUDA 12.5
 
 To install the required dependencies, run:
 ```bash
@@ -22,12 +26,19 @@ pip install -r requirements.txt
 ## PersonalWAB Benchmark
 
 The **PersonalWAB** benchmark includes:
-- **User Instructions**: Natural language instructions for Web task completion.
-- **Personalized User Data**: User-specific data (profiles, historical behaviors).
-- **Web Functions**: Actions that agents can perform based on instructions.
-- **Evaluation Paradigms**: Two paradigms across three personalized Web tasks.
 
-The dataset has been contained in "PersonalWAB/envs/pwa/data".
+- **User Instructions**: Natural language instructions for Web task completion.
+- **Personalized User Data**: Simulated user profiles and historical web behaviors.
+- **Web Functions**: Actions agents perform based on instructions.
+- **Evaluation Paradigms**: Single-turn and multi-turn tracks across three different type of instructions.
+
+The dataset is available in "PersonalWAB/envs/pwab/data".
+
+### Task Description
+
+**Personalized Search**: Personalized product search using user instructions and history.  
+**Personalized Recommendation**: Recommend items based on implicit preferences.  
+**Personalized Review Generation**: Generate reviews aligned with user preferences.
 
 ---
 
@@ -35,59 +46,80 @@ The dataset has been contained in "PersonalWAB/envs/pwa/data".
 
 ### Running Experiments 
 
+To run experiments on the **PersonalWAB** benchmark, use the following command:
 
+```bash
+bash scripts/run_singleturn.sh  # Single-turn track
+bash scripts/run_multiturn.sh   # Multi-turn track
+```
+
+You can modify agent strategies, memory mechanisms, and parameters in the scripts to explore various configurations.
 
 ---
 
 ## Benchmark Evaluation
 
-The **PersonalWAB** benchmark provides two evaluation paradigms across three tasks:
-1. **Task 1**: [Description of task]
-2. **Task 2**: [Description of task]
-3. **Task 3**: [Description of task]
+The **PersonalWAB** benchmark supports two evaluation tracks: single-turn and multi-turn interactions. The key metrics for evaluation include:
 
-### Benchmark Results
-
-We provide the following metrics for evaluation:
-
+- **Tool Accuracy**: The accuracy of selecting appropriate web functions.
+- **Result Accuracy**: The relevance of returned results to user preferences.
+- **Avg. Steps**: The average number of actions executed to complete a user instruction.
 
 ---
 
 ## PUMA Framework
 
 The **PUMA** framework adapts LLMs for personalized Web agent tasks by utilizing:
-- **Memory Bank**: A task-specific retrieval mechanism that filters relevant historical Web behaviors.
-- **Fine-tuning**: LLM fine-tuning with heuristically generated pseudo-labels.
-- **Direct Preference Optimization**: A strategy to align model predictions with user preferences.
 
-For more details, please refer to our paper.
+- **Long-term Memory Bank**: A retrieval mechanism that filters relevant historical web behaviors.
+- **Fine-tuning**: LLM fine-tuning with heuristically generated pseudo-labels.
+- **Direct Preference Optimization**: Aligns parameter generation with user preferences through DPO.
+
+For more detailed information, refer to our paper.
 
 ### Training PUMA
 
-STEP 1: Prepare the dataset
+STEP 1: Prepare the SFT dataset  
 ```bash
 cd PUMA
 bash scripts/pre_sft_func_data.sh
 bash scripts/pre_sft_param_data.sh
 ```
-STEP 2: Train the LLaMA model with SFT
+STEP 2: Train the LLaMA model with SFT  
 ```bash
-bash scripts/fintune_function_param.sh
+bash scripts/finetune_function_param.sh
 ```
-STEP 3: Generate function results and parameter results for DPO
+STEP 3: Generate function results and parameters for DPO  
 ```bash
-bash scripts/genenrate_function.sh
-bash scripts/genenrate_param_dpo.sh
+bash scripts/generate_function.sh
+bash scripts/generate_param_dpo.sh
 ```
-STEP 4: Evaluate the parameter results in PersonalWAB
+STEP 4: Evaluate the parameter results in PersonalWAB  
 ```bash
 cd ..
-
+bash scripts/fast_test_dpo.sh
+```
+STEP 5: Prepare the DPO dataset  
+```bash
+cd PUMA
+bash scripts/pre_dpo_data.sh
+```
+STEP 6: Train with DPO    
+```bash
+bash scripts/dpo_llama.sh
+```
+STEP 7: Evaluate the DPO model in PersonalWAB  
+```bash
+cd ..
+bash scripts/run_singleturn_puma.sh
+```
+Or you can also generate the final function and parameter results and use scripts/fast_test.sh to see the performance.
 ---
 
 ## Citation
 
-If you use this code or dataset in your work, please cite our paper:
+If you use this code or dataset in your research, please cite our paper:
+
 
 ---
 

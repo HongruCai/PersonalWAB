@@ -1,4 +1,4 @@
-deepspeed --master_port=23333 finetune_llama.py \
+deepspeed --include=localhost:4,5,6,7 --master_port=29999 finetune_llama.py \
     --data_path data/param_data768.json \
     --function_data_path data/function_data1.json \
     --output_dir output/param \
@@ -16,4 +16,4 @@ deepspeed --master_port=23333 finetune_llama.py \
     --gradient_accumulation_steps 16 \
     --temperature 1.0 \
     --float16 \
-    --train_on function_param \
+    --train_on function \
