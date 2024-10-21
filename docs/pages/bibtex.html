@@ -1,0 +1,50 @@
+---
+layout: default
+title: {{ site.name }}
+---
+
+<h2 style="text-align: center;">How to cite PersonalWAB</h2>
+<p style="text-align: center;">You can use the following BibTeX entry to cite this work:</p>
+
+<!-- Container to center the BibTeX and button -->
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 2rem 0;">
+
+  <!-- BibTeX Content in a Textarea for easy copying -->
+  <textarea id="bibtex" rows="8" readonly style="resize: none; padding: 1rem; border: 1px solid #ccc; border-radius: 0.5rem; width: 90%; max-width: 50rem; font-family: monospace; text-align: left;">
+@article{personalwab2024,
+  title={Large Language Models Empowered Personalized Web Agents},
+  author={Your Name and Another Author},
+  journal={Journal of AI Research},
+  year={2024},
+  pages={1-12}
+}
+  </textarea>
+
+  <!-- Copy Button -->
+  <button onclick="copyBibtex()" style="margin-top: 1rem; padding: 0.8rem 2rem; background-color: #579ECE; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">Copy to Clipboard</button>
+
+  <!-- Placeholder for Copy Confirmation Message (with fixed height) -->
+  <div style="height: 1rem; margin-top: 1rem;">
+    <span id="copy-confirmation" style="display:none; color: #E55D1E;">Copied!</span>
+  </div>
+
+</div>
+
+<!-- JavaScript to handle copying -->
+<script>
+function copyBibtex() {
+  var copyText = document.getElementById("bibtex");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+  document.execCommand("copy");
+
+  // Show confirmation message
+  var confirmation = document.getElementById("copy-confirmation");
+  confirmation.style.display = "inline";
+
+  // Hide the confirmation message after 3 seconds
+  setTimeout(function() {
+    confirmation.style.display = "none";
+  }, 3000);
+}
+</script>

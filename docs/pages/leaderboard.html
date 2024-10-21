@@ -1,0 +1,469 @@
+---
+layout: default
+title: {{ site.name }}
+---
+<div class="leaderboard-page">
+<h2 style="text-align: center;">Leaderboard</h2>
+<p>
+  The leaderboard shows the performance of different methods on the PersonalWAB benchmark. 
+  <li><strong>Single-turn track</strong>: Each method has only one chance to execute the user's instruction without additional actions.</li>
+  <li><strong>Multi-turn track</strong>: Allows multiple attempts with a user simulator for real-time multi-turn interactions.</li>
+  <li><strong>F. Acc</strong>: Function accuracy, measures how accurately correct functions are used. </li>
+  <li><strong>R. Acc</strong>: Result accuracy, measures the correctness of the function results produced.</li>
+  <li><strong>Avg. Steps</strong>: Represents the average number of steps taken by the agent to complete each instruction.</li>
+</p>
+<p>In each track, methods are ranked based on their overall F. Acc and R. Acc scores.</p>
+<p><strong>Notice</strong>: To assess your results on the test set or submit your model for inclusion on the leaderboard, please fill out <a href="#">this form</a>.</p>
+<h3 style="text-align: center;"><strong>Single-turn Track</strong></h3>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2">Rank</th>
+        <th rowspan="2">Method</th>
+        <th colspan="2">Search</th>
+        <th colspan="2">Recommendation</th>
+        <th colspan="2">Review</th>
+        <th colspan="2">Overall</th>
+      </tr>
+      <tr>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>PUMA (LLaMA-7B)</td>
+        <td>0.996</td>
+        <td>0.652</td>
+        <td>0.987</td>
+        <td>0.054</td>
+        <td>1.000</td>
+        <td>0.538</td>
+        <td><strong>0.994</strong></td>
+        <td><strong>0.406</strong></td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>PUMA (gpt-4o)</td>
+        <td>1.000</td>
+        <td>0.649</td>
+        <td>0.939</td>
+        <td>0.048</td>
+        <td>1.000</td>
+        <td>0.449</td>
+        <td>0.979</td>
+        <td>0.373</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>ReAct</td>
+        <td>0.903</td>
+        <td>0.605</td>
+        <td>0.560</td>
+        <td>0.027</td>
+        <td>0.996</td>
+        <td>0.444</td>
+        <td>0.815</td>
+        <td>0.350</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>Relevant Memory</td>
+        <td>0.928</td>
+        <td>0.622</td>
+        <td>0.492</td>
+        <td>0.030</td>
+        <td>1.000</td>
+        <td>0.443</td>
+        <td>0.800</td>
+        <td>0.356</td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>Last Memory</td>
+        <td>0.937</td>
+        <td>0.626</td>
+        <td>0.432</td>
+        <td>0.028</td>
+        <td>1.000</td>
+        <td>0.442</td>
+        <td>0.782</td>
+        <td>0.357</td>
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>Random Memory</td>
+        <td>0.974</td>
+        <td>0.640</td>
+        <td>0.296</td>
+        <td>0.018</td>
+        <td>0.996</td>
+        <td>0.442</td>
+        <td>0.745</td>
+        <td>0.357</td>
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>RecMind</td>
+        <td>0.981</td>
+        <td>0.645</td>
+        <td>0.226</td>
+        <td>0.017</td>
+        <td>0.990</td>
+        <td>0.442</td>
+        <td>0.721</td>
+        <td>0.359</td>
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>No Memory</td>
+        <td>1.000</td>
+        <td>0.647</td>
+        <td>0.092</td>
+        <td>0.000</td>
+        <td>1.000</td>
+        <td>0.444</td>
+        <td>0.684</td>
+        <td>0.355</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+
+<h3 style="text-align: center;"><strong>Multi-turn Track</strong></h3>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2">Rank</th>
+        <th rowspan="2">Method</th>
+        <th colspan="3">Search</th>
+        <th colspan="3">Recommendation</th>
+        <th colspan="3">Review</th>
+        <th colspan="3">Overall</th>
+      </tr>
+      <tr>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>Avg. Steps</th>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>Avg. Steps</th>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>Avg. Steps</th>
+        <th>F. Acc</th>
+        <th>R. Acc</th>
+        <th>Avg. Steps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>PUMA (gpt-4o)</td>
+        <td>0.999</td>
+        <td>0.720</td>
+        <td>5.082</td>
+        <td>0.984</td>
+        <td>0.052</td>
+        <td>3.791</td>
+        <td>1.000</td>
+        <td>0.453</td>
+        <td>2.002</td>
+        <td><strong>0.994</strong></td>
+        <td><strong>0.399</strong></td>
+        <td>3.608</td>
+      </tr>
+      
+      <tr>
+        <td>2</td>
+        <td>Relevant Memory</td>
+        <td>0.996</td>
+        <td>0.686</td>
+        <td>4.233</td>
+        <td>0.715</td>
+        <td>0.042</td>
+        <td>4.564</td>
+        <td>0.999</td>
+        <td>0.448</td>
+        <td>2.008</td>
+        <td>0.899</td>
+        <td>0.383</td>
+        <td>3.609</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Last Memory</td>
+        <td>0.996</td>
+        <td>0.676</td>
+        <td>4.229</td>
+        <td>0.708</td>
+        <td>0.045</td>
+        <td>4.252</td>
+        <td>1.000</td>
+        <td>0.449</td>
+        <td>2.007</td>
+        <td>0.897</td>
+        <td>0.381</td>
+        <td>3.498</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>Random Memory</td>
+        <td>0.999</td>
+        <td>0.680</td>
+        <td>4.193</td>
+        <td>0.703</td>
+        <td>0.042</td>
+        <td>4.474</td>
+        <td>1.000</td>
+        <td>0.448</td>
+        <td>2.007</td>
+        <td>0.896</td>
+        <td>0.380</td>
+        <td>3.564</td>
+      </tr>
+      
+      <tr>
+        <td>5</td>
+        <td>InteRecAgent</td>
+        <td>0.999</td>
+        <td>0.642</td>
+        <td>3.110</td>
+        <td>0.618</td>
+        <td>0.022</td>
+        <td>3.008</td>
+        <td>1.000</td>
+        <td>0.447</td>
+        <td>2.001</td>
+        <td>0.867</td>
+        <td>0.362</td>
+        <td>2.706</td>
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>RecMind</td>
+        <td>0.997</td>
+        <td>0.642</td>
+        <td>6.728</td>
+        <td>0.347</td>
+        <td>0.026</td>
+        <td>6.003</td>
+        <td>0.997</td>
+        <td>0.451</td>
+        <td>2.107</td>
+        <td>0.771</td>
+        <td>0.364</td>
+        <td>4.938</td>
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>Reflection</td>
+        <td>1.000</td>
+        <td>0.686</td>
+        <td>5.406</td>
+        <td>0.281</td>
+        <td>0.014</td>
+        <td>6.145</td>
+        <td>0.976</td>
+        <td>0.449</td>
+        <td>2.145</td>
+        <td>0.741</td>
+        <td>0.373</td>
+        <td>4.579</td>
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>ReAct</td>
+        <td>0.996</td>
+        <td>0.674</td>
+        <td>4.657</td>
+        <td>0.218</td>
+        <td>0.013</td>
+        <td>5.468</td>
+        <td>0.974</td>
+        <td>0.448</td>
+        <td>2.129</td>
+        <td>0.718</td>
+        <td>0.369</td>
+        <td>4.098</td>
+      </tr>
+
+      <tr>
+        <td>9</td>
+        <td>No Memory</td>
+        <td>0.996</td>
+        <td>0.656</td>
+        <td>2.398</td>
+        <td>0.096</td>
+        <td>0.000</td>
+        <td>2.420</td>
+        <td>1.000</td>
+        <td>0.446</td>
+        <td>2.019</td>
+        <td>0.685</td>
+        <td>0.358</td>
+        <td>2.280</td>
+      </tr>
+      <!-- Add more rows similarly for the other methods -->
+    </tbody>
+  </table>
+</div>
+
+<h3 style="text-align: center;"><strong>Method Details</strong></h3>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Backbone</th>
+        <th>Author</th>
+        <th>Created</th>
+        <th>Paper</th>
+        <th>Code</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PUMA</td>
+        <td>LLaMA2-7B & gpt-4o-mini</td>
+        <td>PersonalWAB</td>
+        <td>2024-10</td>
+        <td><a href="#">paper</a></td>
+        <td><a href="https://github.com/HongruCai/PersonalWAB">code</a></td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>ReAct</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td><a href="https://arxiv.org/abs/2210.03629">paper</a></td>
+        <td><a href="https://react-lm.github.io/">code</a></td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>Reflection</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td><a href="https://arxiv.org/abs/2303.11366">paper</a></td>
+        <td><a href="https://github.com/noahshinn/reflexion">code</a></td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>RecMind</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td><a href="https://arxiv.org/abs/2308.14296">paper</a></td>
+        <td>code</td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>InteRecAgent</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td><a href="https://arxiv.org/abs/2308.16505">paper</a></td>
+        <td><a href="https://github.com/microsoft/RecAI/tree/main/InteRecAgent">code</a></td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>No Memory</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td>N.A.</a></td>
+        <td>N.A.</td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>Random Memory</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td>N.A.</a></td>
+        <td>N.A.</td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>Last Memory</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td>N.A.</a></td>
+        <td>N.A.</td>
+        <td>See implementation details in our paper</td>
+      </tr>
+
+      <tr>
+        <td>Relevant Memory</td>
+        <td>gpt-4o-mini</td>
+        <td>Baseline</td>
+        <td>2024-10</td>
+        <td>N.A.</a></td>
+        <td>N.A.</td>
+        <td>See implementation details in our paper</td>
+      </tr>
+      <!-- Add more rows for other methods -->
+    </tbody>
+  </table>
+</div>
+</div>
+
+<style>
+.table-container {
+  display: flex;
+  justify-content: center;  /* 水平居中 */
+  width: 100%;  /* 父容器宽度为100% */
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  /* max-width: 80rem;  表格最大宽度 */
+  width: 100%;  /* 确保表格占满容器 */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+</style>

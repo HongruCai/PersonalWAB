@@ -1,0 +1,18 @@
+# Setup
+title:        PersonalWAB
+tagline:      Large Language Models Empowered Personalized Web Agents
+baseurl:      ""
+paginate:     1
+locale:       "en"
+
+# About/contact
+author:
+  name:       Hongru Cai
+  url:        https://hongrucai.github.io/ 
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown

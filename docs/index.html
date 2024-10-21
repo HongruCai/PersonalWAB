@@ -1,0 +1,45 @@
+---
+layout: default
+title: {{ site.name }}
+---
+
+<div id="home">
+  <h2 class="about">Abstract</h2>
+  <div class="about">
+    <p>
+      Web agents have emerged as a promising direction to automate Web task completion based on user instructions, significantly enhancing user experience. 
+      Recently, Web agents have evolved from traditional agents to Large Language Models (LLMs)-based Web agents. 
+      Despite their success, existing LLM-based Web agents overlook the importance of personalized data (e.g. user profiles and historical Web behaviors) in assisting the understanding of users' personalized instructions and executing customized actions. 
+    </p>
+    <p>
+      To overcome the limitation, we first formulate the task of LLM-empowered personalized Web agents, which integrate personalized data and user instructions to personalize instruction comprehension and action execution. 
+      To address the absence of a comprehensive evaluation benchmark, we construct a <strong>Personal</strong>ized <strong>W</strong>eb <strong>A</strong>gent <strong>B</strong>enchmark (<strong>PersonalWAB</strong>), featuring user instructions, personalized user data, Web functions, and two evaluation paradigms across three personalized Web tasks. 
+      Moreover, we propose a <strong>P</strong>ersonalized <strong>U</strong>ser <strong>M</strong>emory-enhanced <strong>A</strong>lignment (<strong>PUMA</strong>) framework to adapt LLMs to the personalized Web agent task. PUMA utilizes a memory bank with a task-specific retrieval strategy to filter relevant historical Web behaviors. 
+      Based on the behaviors, PUMA then aligns LLMs for personalized action execution through fine-tuning and direct preference optimization. 
+      Extensive experiments validate the superiority of PUMA over existing Web agents on PersonalWAB. 
+    </p>     
+  </div>
+  <h2 class="about">PersonalWAB Benchmark</h2>
+  <div class="about">
+    <p>
+      Our benchmark includes: 
+      <li> <strong>Personalized User Data</strong>: 1,000 diverse user profiles and 40,000+ web behaviors, originated from real-world data.</li>
+      <li> <strong>User Instructions</strong>: 9,000+ personalized natural language instructions tailored to each user's profile.</li>
+      <li> <strong>User Simulatior</strong>: Simulates interactions aligned with user profiles and historical behaviors.</li>
+      <li> <strong>Evaluation Paradigms</strong>: Single-turn track tests for isolated tasks and multi-turn for more complex interactions.</li>
+    </p> 
+    <p>See more details in our paper: <href="">Large Language Models Empowered Personalized Web Agents</href>.</p> 
+  </div>
+
+  <h2 class="about">An Example</h2>
+  <div class="about">
+    <p>
+     
+    </p>  
+  </div>
+  <!-- <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul> -->
+</div>

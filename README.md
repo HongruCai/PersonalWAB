@@ -26,16 +26,16 @@ pip install -r requirements.txt
 
 The **PersonalWAB** benchmark includes:
 
-- **User Instructions**: Natural language instructions for Web task completion.
-- **Personalized User Data**: Simulated user profiles and historical web behaviors.
-- **Web Functions**: Actions agents perform based on instructions.
-- **Evaluation Paradigms**: Single-turn and multi-turn tracks across three different type of instructions.
+- **Personalized User Data**: 1,000 diverse user profiles and 40,000+ web behaviors, originated from real-world data.
+- **User Instructions**: 9,000+ highly personalized natural language instructions tailored to each user's profile.
+- **User Simulatior**: Simulates interactions aligned with user profiles and historical behaviors.
+- **Evaluation Paradigms**:  Single-turn track tests for isolated tasks and multi-turn for more complex interactions.
 
 The dataset is available in "PersonalWAB/envs/pwab/data".
 
 ### Task Description
 
-**Personalized Search**: Personalized product search using user instructions and history.  
+**Personalized Search**: Personalized product search using user instructions and behavioral history.  
 **Personalized Recommendation**: Recommend items based on implicit preferences.  
 **Personalized Review Generation**: Generate reviews aligned with user preferences.
 
