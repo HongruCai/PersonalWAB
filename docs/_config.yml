@@ -1,7 +1,7 @@
 # Setup
 title:        PersonalWAB
 tagline:      Large Language Models Empowered Personalized Web Agents
-baseurl:      ""
+baseurl:      "/PersonalWAB"
 paginate:     1
 locale:       "en"
 
