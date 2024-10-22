@@ -7,63 +7,152 @@ title: {{ site.name }}
 <div class="downloads">
 
   <div class="download-item">
-    <strong>User History</strong><br>
-    A collection of users' web behaviors, including history, training, and test splits.
+    <strong>User History</strong>: A collection of users' web behaviors, including history, training, and test splits.
     <br>
+    Fields:
+<pre>
+{
+  "user_id": [
+    {
+      "product_info":{
+        "main_category": ,
+        "title": ,
+        "average_rating": ,
+        "rating_number": ,
+        "features": ,
+        "description": ,
+        "price": ,
+        "store":,
+        "categories": ,
+        "details": ,
+        "parent_asin": ,
+      },
+      "review": {
+        "rating": ,
+        "title": ,
+        "text": ,
+        "parent_asin": ,
+        "timestamp": 
+      },
+      "split": "history",
+    },
+  ],
+}
+</pre>
     <a href="https://drive.google.com/file/d/1ASkuUtuj0XCyCl5C1Ru1Hbpynm0WoPmS/view?usp=sharing" download>Download from Google Drive</a>
   </div>
 
   <div class="download-item">
-    <strong>User Instructions</strong><br>
-    Instructions for web tasks, divided into training and test sets.
+    <strong>User Instructions</strong>: Personalized instructions for web tasks, divided into training and test sets.
     <br>
+    Fields:
+<pre>
+{
+  "train": [
+      {
+        "user_id": ,
+        "task": ,
+        "target": {
+          "product_info": ,
+          "review":
+        }
+        "timestamp": ,
+        "type": ,
+      },
+  ],
+  "test": [...],
+}
+</pre>
     <a href="https://drive.google.com/file/d/1VQ_nvxSb5DKTs-lXbjj7_xyDUVcGmRtl/view?usp=sharing" download>Download from Google Drive</a>
   </div>
 
   <div class="download-item">
-    <strong>User Profiles</strong><br>
-    Simulated profiles for the users in the benchmark.
+    <strong>User Profiles</strong>: Simulated profiles for the users in the benchmark.
     <br>
-    <a href="https://drive.google.com/file/d/1EcQUoLCvZi_mB5pVy0ov3ym9PwzVLjSi/view?usp=sharing" download>Download from Google Drive</a>
+    Fields:
+<pre>
+{
+  "user_id": {
+    "user_profile": {
+      "Gender": ,
+      "Age": ,
+      "Occupation": ,
+      "Price Sensitivity": ,
+      "Shopping Interest": ,
+      "Brand Preference": ,
+      "Diversity Preference": ,
+      "Interaction Complexity": ,
+      "Tone and Style": ,
+      "Item Reference": ,
+      "Focus Aspect": ,
+    }
+  },
+}
+</pre>
+  <a href="https://drive.google.com/file/d/1EcQUoLCvZi_mB5pVy0ov3ym9PwzVLjSi/view?usp=sharing" download>Download from Google Drive</a>
   </div>
 
   <div class="download-item">
-    <strong>All Products</strong><br>
-    A complete dataset of products referenced in the benchmark.
+    <strong>All Products</strong>: A complete dataset of products referenced in the benchmark.
     <br>
+    Fields:
+<pre>
+{
+  "parent_asin": {
+      "main_category": ,
+      "title": ,
+      "average_rating": ,
+      "rating_number": ,
+      "features": ,
+      "description": ,
+      "price": ,
+      "store":,
+      "categories": ,
+      "details": ,
+      "parent_asin": ,
+  },
+}
+</pre>
     <a href="https://drive.google.com/file/d/1Vg8zCKAYgHXfTvZuxeMMkpe118622vp3/view?usp=sharing" download>Download from Google Drive</a>
   </div>
 
 </div>
 
 <style>
-  .downloads {
-    max-width: 80%;
-    margin: 2rem auto;
-    font-family: Arial, sans-serif;
-  }
-  .download-item {
-    background-color: #f4f4f9;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 0.5rem;
-  }
-  .download-item strong {
-    font-size: 1.2rem;
-    color: #333;
-  }
-  .download-item a {
-    text-decoration: none;
-    color: #579ECE;
-    font-weight: bold;
-  }
-  .download-item a:hover {
-    text-decoration: underline;
-  }
-  /* h2 {
-    text-align: center;
-    color: #444;
-    font-size: 2rem;
-  } */
+.downloads {
+  max-width: 80%;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
+
+.download-item {
+  background-color: #f4f4f9;
+  border: 0.1rem solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.download-item strong {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.download-item a {
+  text-decoration: none;
+  color: #579ECE;
+  font-weight: bold;
+}
+
+.download-item a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+}
+
 </style>
