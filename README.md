@@ -2,13 +2,12 @@
 
 ## Overview
 
-This repository provides the implementation of **PUMA** (Personalized User Memory-enhanced Alignment) and the **PersonalWAB** (Personalized Web Agent Benchmark). The project addresses the limitations of current LLM-based Web agents by incorporating personalized data, such as user profiles and historical web behaviors, to improve user instruction understanding and customize actions.
+LLM-based Web agents overlook the importance of personalized data (e.g., user profiles and historical Web behaviors) in assisting the nderstanding of users' personalized instructions and executing customized actions. **PersonalWAB** (Personalized Web Agent Benchmark) serves as the first comprehensive benchmark designed to evaluate Web agents on tasks such as personalized search, recommendation, and review generation. The benchmark includes a set of personalized user data, Web functions, and evaluation paradigms that facilitate the development of more personalized Web agents.
+**PUMA** (Personalized User Memory-enhanced Alignment) is a framework developed to adapt LLMs to the personalized Web agent task. By leveraging a memory bank and task-specific retrieval strategies, PUMA filters relevant historical Web behaviors, enabling fine-tuned and optimized personalized action execution.
 
-The benchmark focuses on personalized Web agent tasks like personalized search, recommendation, and review generation.
+For more details, refer to our paper: [Large Language Models Empowered Personalized Web Agents]().
 
-See the [paper]() for more details.
-
-See leaderboard at [PersonalWAB Leaderboard](https://hongrucai.github.io/PersonalWAB/leaderboard). Submit your results at [google form](https://forms.gle/UQdxUG8f28xbRd5Z8).
+Check out the [PersonalWAB Leaderboard](https://hongrucai.github.io/PersonalWAB/leaderboard) for current results, and submit your own using [google form](https://forms.gle/UQdxUG8f28xbRd5Z8).
 
 
 ## Installation
@@ -65,11 +64,11 @@ The **PersonalWAB** benchmark supports two evaluation tracks: single-turn and mu
 
 ### Leaderboard Submission
 
-When running run.py to test your model, the script will automatically save the complete task execution results. This includes the agent's prompts, actions, function accuracy (Function Acc), result accuracy (Res Acc), and other relevant information.
+When running `run.py`, the script will automatically save the detailed task execution results. This includes the agent's prompts, actions, function accuracy (Function Acc), result accuracy (Res Acc), and other relevant information.
 
 - After testing, the program will generate a detailed result file with all the execution data.
 - Upload this complete result file to an online storage service such as Google Drive or OneDrive.
-- Once uploaded, please submit the download link through the provided Google Form.
+- Once uploaded, please submit the download link through the provided [Google Form](https://forms.gle/UQdxUG8f28xbRd5Z8).
 - Ensure that the result file is accessible via the shared link, and that it contains all relevant information for evaluation and ranking on the leaderboard.
 
 
