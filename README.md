@@ -1,4 +1,4 @@
-# PersonalWAB: Large Language Models Empowered Personalized Web Agents
+# Large Language Models Empowered Personalized Web Agents
 
 ## Overview
 
@@ -6,7 +6,10 @@ This repository provides the implementation of **PUMA** (Personalized User Memor
 
 The benchmark focuses on personalized Web agent tasks like personalized search, recommendation, and review generation.
 
-We will maintain a **leaderboard** to allow researchers to submit and compare their models' performance on PersonalWAB. Details on how to participate and submit results will be released soon.
+See the [paper]() for more details.
+
+See leaderboard at [PersonalWAB Leaderboard](https://hongrucai.github.io/PersonalWAB/leaderboard). Submit your results at [google form](https://forms.gle/UQdxUG8f28xbRd5Z8).
+
 
 ## Installation
 
@@ -39,9 +42,6 @@ The dataset is available in "PersonalWAB/envs/pwab/data".
 **Personalized Recommendation**: Recommend items based on implicit preferences.  
 **Personalized Review Generation**: Generate reviews aligned with user preferences.
 
-
-## Usage
-
 ### Running Experiments 
 
 To run experiments on the **PersonalWAB** benchmark, use the following command:
@@ -55,13 +55,23 @@ bash scripts/run_multiturn.sh   # Multi-turn track
 You can modify agent strategies, memory mechanisms, and parameters in the scripts to explore various configurations.
 
 
-## Benchmark Evaluation
+### Benchmark Evaluation
 
 The **PersonalWAB** benchmark supports two evaluation tracks: single-turn and multi-turn interactions. The key metrics for evaluation include:
 
-- **Tool Accuracy**: The accuracy of selecting appropriate web functions.
+- **Function Accuracy**: The accuracy of selecting appropriate web functions.
 - **Result Accuracy**: The relevance of returned results to user preferences.
 - **Avg. Steps**: The average number of actions executed to complete a user instruction.
+
+### Leaderboard Submission
+
+When running run.py to test your model, the script will automatically save the complete task execution results. This includes the agent's prompts, actions, function accuracy (Function Acc), result accuracy (Res Acc), and other relevant information.
+
+- After testing, the program will generate a detailed result file with all the execution data.
+- Upload this complete result file to an online storage service such as Google Drive or OneDrive.
+- Once uploaded, please submit the download link through the provided Google Form.
+- Ensure that the result file is accessible via the shared link, and that it contains all relevant information for evaluation and ranking on the leaderboard.
+
 
 ## PUMA Framework
 
@@ -113,8 +123,13 @@ Or you can also generate the final function and parameter results and use script
 
 ## Citation
 
-If you use this code or dataset in your research, please cite our paper:
+If you use source code or dataset in your research, please cite our paper:
 
+
+## License
+
+This project is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) License.
 
 ## Contact
 
+For inquiries, feel free to reach out to Hongru Cai at [henry.hongrucai@gmail.com](mailto:henry.hongrucai@gmail.com).
