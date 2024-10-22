@@ -33,7 +33,7 @@ The **PersonalWAB** benchmark includes:
 - **User Simulatior**: Simulates interactions aligned with user profiles and historical behaviors.
 - **Evaluation Paradigms**:  Single-turn track tests for isolated tasks and multi-turn for more complex interactions.
 
-The dataset is available in "PersonalWAB/envs/pwab/data".
+The dataset is available in "PersonalWAB/envs/pwab/data". Or you can download [here](https://hongrucai.github.io/PersonalWAB/download).
 
 ### Task Description
 
@@ -46,7 +46,7 @@ The dataset is available in "PersonalWAB/envs/pwab/data".
 To run experiments on the **PersonalWAB** benchmark, use the following command:
 
 ```bash
-source scripts/set_api_key.sh # Set your OpenAI API key
+source scripts/set_api_key.sh  # Set your OpenAI API key
 bash scripts/run_singleturn.sh  # Single-turn track
 bash scripts/run_multiturn.sh   # Multi-turn track
 ```
