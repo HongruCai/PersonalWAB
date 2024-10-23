@@ -382,7 +382,7 @@ def main():
     random.seed(args.seed)
 
     time_str = datetime.now().strftime("%m%d%H%M")
-    turn_sig = 'singeturn' if args.max_steps == -1 else 'multiturn'
+    turn_sig = 'singleturn' if args.max_steps == -1 else 'multiturn'
     file_str = f'''{args.log_dir}/{turn_sig}/step{args.max_steps}_{args.agent_strategy}-{args.model.split('/')[-1]}-{args.temperature}_mem{args.agent_memory}_range{args.start_index}-{args.end_index}_user{args.user_model}_{time_str}.json'''
     if args.resume_from:
         file_str = args.resume_from

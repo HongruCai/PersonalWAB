@@ -5,7 +5,7 @@
 LLM-based Web agents overlook the importance of personalized data (e.g., user profiles and historical Web behaviors) in assisting the nderstanding of users' personalized instructions and executing customized actions. **PersonalWAB** (Personalized Web Agent Benchmark) serves as the first comprehensive benchmark designed to evaluate Web agents on tasks such as personalized search, recommendation, and review generation. The benchmark includes a set of personalized user data, Web functions, and evaluation paradigms that facilitate the development of more personalized Web agents.
 **PUMA** (Personalized User Memory-enhanced Alignment) is a framework developed to adapt LLMs to the personalized Web agent task. By leveraging a memory bank and task-specific retrieval strategies, PUMA filters relevant historical Web behaviors, enabling fine-tuned and optimized personalized action execution.
 
-For more details, refer to our paper: [Large Language Models Empowered Personalized Web Agents]().
+For more details, refer to our paper: [Large Language Models Empowered Personalized Web Agents](https://arxiv.org/abs/2410.17236).
 
 Check out the [PersonalWAB Leaderboard](https://hongrucai.github.io/PersonalWAB/leaderboard) for current results, and submit your own using [google form](https://forms.gle/UQdxUG8f28xbRd5Z8).
 
@@ -123,7 +123,17 @@ Or you can also generate the final function and parameter results and use script
 ## Citation
 
 If you use source code or dataset in your research, please cite our paper:
-
+```bibtex
+@misc{cai2024personalwab,
+      title={Large Language Models Empowered Personalized Web Agents}, 
+      author={Hongru Cai and Yongqi Li and Wenjie Wang and Fengbin Zhu and Xiaoyu Shen and Wenjie Li and Tat-Seng Chua},
+      year={2024},
+      eprint={2410.17236},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.17236}, 
+}
+```
 
 ## License
 
