@@ -140,6 +140,10 @@ class LlaMaTrainerwithTemperature(Trainer):
         shift_labels = shift_labels.to(shift_logits.device)
         #print(shift_logits.shape, shift_labels.shape)
         loss = loss_fct(shift_logits, shift_labels)
+        torch.set_printoptions(threshold=torch.inf)
+        # if loss == float('inf') or torch.isnan(loss):
+        #     print('inf or nan loss')
+        #     print(inputs.input_ids)
 
         return (loss, outputs) if return_outputs else loss
 

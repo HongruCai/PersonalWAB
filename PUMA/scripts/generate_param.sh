@@ -1,11 +1,11 @@
 accelerate launch test_llama.py \
     --model_path output/param/Llama-2-7b-chat-hf/ \
     --base_model meta-llama/Llama-2-7b-chat-hf \
-    --data_path data/param_data768.json \
+    --data_path data/param_data.json \
     --float16 \
     --test_on param \
     --batch_size 4 \
     --max_new_tokens 256 \
-    --tool_file output/res/function_768.json \
-    --res_file output/res/param_768.json \
+    --tool_file output/res/function.json \
+    --res_file output/res/param.json \
     --memory_token_length 768 

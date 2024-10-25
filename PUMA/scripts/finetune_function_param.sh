@@ -1,12 +1,12 @@
-deepspeed --include=localhost:4,5,6,7 --master_port=29999 finetune_llama.py \
-    --data_path data/param_data768.json \
+deepspeed --include=localhost:0,1,2,3 --master_port=29999 finetune_llama.py \
+    --data_path data/param_data2.json \
     --function_data_path data/function_data1.json \
     --output_dir output/param \
     --model_name meta-llama/Llama-2-7b-chat-hf \
     --train_epoch 10 \
     --learning_rate 3e-4 \
     --train_batch_size 1 \
-    --source_length 1024 \
+    --source_length 1280 \ 
     --warmup_ratio 0.1 \
     --eval_strategy epoch \
     --save_strategy epoch \
@@ -16,4 +16,4 @@ deepspeed --include=localhost:4,5,6,7 --master_port=29999 finetune_llama.py \
     --gradient_accumulation_steps 16 \
     --temperature 1.0 \
     --float16 \
-    --train_on function \
+    --train_on param \
