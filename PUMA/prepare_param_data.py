@@ -32,8 +32,6 @@ def main():
     task_file = json.load(open(args.task_file, 'r'))
     user_history = json.load(open(args.user_history_file, 'r'))
     llama_data = {'train': [], 'test': []}
-    tempfile = json.load(open('data/param_data768.json', 'r'))
-    task_spe = json.load(open('../results/old/step-1_function_calling0-gpt-4o-mini-0.0_memsupport_range0-10_usergpt-4o-mini_09172211.json', 'r'))
     for split, tasks in task_file.items():
         for task in tqdm(tasks):
             input_text = task['task']
@@ -55,17 +53,7 @@ def main():
             truncated_full_text = prefix_text.replace('<Memory>', memory_text_truncated).replace('<Tool>', tool_text)
 
             if task_type == 'search':
-                #target = generate_search_query(input_text, mem) if split == 'train' else product_info['title']
-                found = 0
-                for item in task_spe:
-                    if 'info' in item:
-                        if item['info']['task']['task'] == input_text and item['info']['actions'][0]['name'] == 'search_product_by_query':
-                            target = item['info']['actions'][0]['arguments']['query']
-                            found = 1
-                            break
-                if found == 0:
-                    target = generate_search_query(input_text, mem) if split == 'train' else product_info['title']
-                    print('generate search query')
+                target = generate_search_query(input_text, mem) if split == 'train' else product_info['title']
                 # no label for test set, so simply set to title, you can generate as well
                 # or you may use taskspe memory agent's response as target
             elif task_type == 'recommend':

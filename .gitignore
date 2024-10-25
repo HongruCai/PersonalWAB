@@ -9,6 +9,7 @@ scripts/cal_results.py
 PUMA/merge_save.py
 scripts/build_search_index.sh
 scripts/debug.py
+PUMA/debug.py
 .vscode/
 # Byte-compiled / optimized / DLL files
 __pycache__/
