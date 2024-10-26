@@ -38,7 +38,7 @@ def predict_next_item(model, item_sequence, maxlen, itemnum, k, device='cuda', p
 
 if __name__ == "__main__":
     dataset_path = 'review'
-    model_path = 'review_0910/SASRec.epoch=1000.lr=0.001.layer=2.head=2.hidden=50.maxlen=30.pth'
+    model_path = 'checkpoint/0.pth'
 
     u2i_index, i2u_index = build_index(dataset_path)
     dataset = data_partition(dataset_path)
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     print('model loaded from', model_path)
     model.to('cuda')
 
-    user_history = json.load(open('../../data/Reviews/1000_users_history_with_split.json', 'r'))
+    user_history = json.load(open('../../data/', 'r'))
     s_ids = json.load(open('data/1000_ids.json', 'r'))
     product_id_map = json.load(open('data/product_id_map.json', 'r'))
     recall_1 = []

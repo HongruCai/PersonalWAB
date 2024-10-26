@@ -4,6 +4,7 @@ PUMA/output/
 PUMA/wandb/
 results/
 !PersonalWAB/envs/pwab/data
+!PersonalWAB/envs/pwab/functions/recommender/data/
 scripts/script_run
 scripts/cal_results.py
 PUMA/merge_save.py
