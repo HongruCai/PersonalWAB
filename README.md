@@ -53,6 +53,7 @@ bash scripts/run_multiturn.sh   # Multi-turn track
 
 You can modify agent strategies, memory mechanisms, and parameters in the scripts to explore various configurations.
 
+For experiments using task-specific memory, use the PUMA framework to generate function selection results. For InteRecAgent, you need to provide the memory file generated from history behaviors before running in training or test set.
 
 ### Benchmark Evaluation
 

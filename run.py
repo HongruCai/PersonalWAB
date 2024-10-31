@@ -369,10 +369,10 @@ def main():
     )
     parser.add_argument("--seed", type=int, default=2024)
     parser.add_argument("--shuffle", type=int, default=0)
-    parser.add_argument("--interec_memory_file", type=str, default='data/interecagent_memory_train.json')
+    parser.add_argument("--interec_memory_file", type=str, default=None)
     
     parser.add_argument("--puma_param_file", type=str, default=None)
-    parser.add_argument("--puma_function_file", type=str, default='PUMA/output/res/tool_results.json')
+    parser.add_argument("--puma_function_file", type=str, default=None)
     parser.add_argument("--puma_generate", type=int, default=0)
     parser.add_argument("--puma_model_path", type=str, default='finetune/output/input/Llama-2-7b-chat-hf/')
     parser.add_argument("--mem_token_length", type=int, default=768)
