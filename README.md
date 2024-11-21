@@ -140,6 +140,8 @@ If you use source code or dataset in your research, please cite our paper:
 
 This project is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) License.
 
+The benchmark implementation in this project is based on the [tau-bench](https://github.com/sierra-research/tau-bench), with significant modifications and enhancements made to suit the needs of this project. The tau-bench is originally licensed under the [MIT License](https://github.com/sierra-research/tau-bench?tab=MIT-1-ov-file), and we continue to honor and adhere to its licensing terms for the portions derived from it.
+
 ## Contact
 
 For inquiries, feel free to reach out to Hongru Cai at [henry.hongrucai@gmail.com](mailto:henry.hongrucai@gmail.com).
