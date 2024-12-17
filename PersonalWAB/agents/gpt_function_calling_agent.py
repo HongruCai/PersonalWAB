@@ -271,7 +271,7 @@ class GPTFunctionCallingAgent(BaseAgent):
             '''Task-specific Memory'''
             timestamp = env.tasks[index]["timestamp"]
             assert self.function_selection_file is not None
-            tool_name = self.function_selection_file[env.tasks[index]["task"]] 
+            tool_name = self.function_selection_file[env.tasks[index]["task"]][0] 
             if tool_name == 'search_product_by_query':
                 task_type = 'search'
             elif tool_name == 'get_recommendations_by_history':

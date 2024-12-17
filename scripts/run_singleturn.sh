@@ -4,9 +4,9 @@ python run.py \
 --user_mode no \
 --user_model gpt-4o-mini \
 --agent_strategy function_calling \
---agent_memory relevant \
---memory_length 100 \
+--agent_memory last \
+--memory_length 50 \
 --task_split test \
---max_concurrency 1 \
+--max_concurrency 5 \
 --max_steps -1 \
 --end_index -1 \

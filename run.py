@@ -230,7 +230,8 @@ def calculate_statistics(results: List[Dict[str, Any]]) -> Dict[str, Any]:
         if 'info' not in result:
             continue
         task_type = result.get("info", {}).get("task", {}).get("type")
-        
+        if task_type not in task_types:
+            continue
         interaction_count = len(result['info']['usage']['completion_tokens'])
         stats[task_type]["interaction_count"] += interaction_count
         global_stats["interaction_count"] += interaction_count

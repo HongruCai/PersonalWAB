@@ -17,6 +17,7 @@ Check out the [PersonalWAB Leaderboard](https://hongrucai.github.io/PersonalWAB/
 - Python 3.11
 - PyTorch 2.4.1
 - CUDA 12.5
+- openjdk
 
 To install the required dependencies, run:
 ```bash

@@ -3,13 +3,11 @@ python run.py \
 --model finetune/llama \
 --user_mode no \
 --user_model gpt-4o-mini \
---agent_strategy puma \
+--agent_strategy function_calling \
 --agent_memory taskspe \
 --memory_length 100 \
 --task_split test \
---max_concurrency 1 \
+--max_concurrency 5 \
 --max_steps -1 \
---end_index 5 \
---puma_function_file PUMA/output/res/ \
---puma_generate 1 \
---puma_model_path PUMA/output/input/Llama-2-7b-chat-hf/ \
+--end_index -1 \
+--puma_function_file PUMA/output/res/function_768.json \
