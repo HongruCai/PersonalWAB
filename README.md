@@ -130,8 +130,8 @@ If you use source code or dataset in your research, please cite our paper:
       title={Large Language Models Empowered Personalized Web Agents}, 
       author={Hongru Cai and Yongqi Li and Wenjie Wang and Fengbin Zhu and Xiaoyu Shen and Wenjie Li and Tat-Seng Chua},
       year={2025},
-      booktitle = {Proceedings of the ACM Web Conference 2025},
-      series = {WWW '25}
+      booktitle={Proceedings of the ACM Web Conference 2025},
+      series={WWW '25}
 }
 ```
 
