@@ -6,7 +6,7 @@ deepspeed --include=localhost:0,1,2,3 --master_port=29999 finetune_llama.py \
     --train_epoch 10 \
     --learning_rate 3e-4 \
     --train_batch_size 1 \
-    --source_length 1280 \ 
+    --source_length 1280 \
     --warmup_ratio 0.1 \
     --eval_strategy epoch \
     --save_strategy epoch \

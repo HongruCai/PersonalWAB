@@ -126,14 +126,12 @@ Or you can also generate the final function and parameter results and use script
 
 If you use source code or dataset in your research, please cite our paper:
 ```bibtex
-@misc{cai2024personalwab,
+@inproceedings{cai2024personalwab,
       title={Large Language Models Empowered Personalized Web Agents}, 
       author={Hongru Cai and Yongqi Li and Wenjie Wang and Fengbin Zhu and Xiaoyu Shen and Wenjie Li and Tat-Seng Chua},
-      year={2024},
-      eprint={2410.17236},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2410.17236}, 
+      year={2025},
+      booktitle = {Proceedings of the ACM Web Conference 2025},
+      series = {WWW '25}
 }
 ```
 
