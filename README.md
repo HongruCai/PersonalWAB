@@ -25,6 +25,8 @@ pip install -r requirements.txt
 
 ## 📊 PersonalWAB Benchmark
 
+![](https://hongrucai.github.io/images/personalwab.png)
+
 The **PersonalWAB** benchmark includes:
 
 - **Personalized User Data**: 1,000 diverse user profiles and 40,000+ web behaviors, originated from real-world data.
