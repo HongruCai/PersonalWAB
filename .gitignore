@@ -7,7 +7,6 @@ results/
 !PersonalWAB/envs/pwab/functions/recommender/data/
 scripts/script_run
 scripts/cal_results.py
-PUMA/merge_save.py
 scripts/build_search_index.sh
 scripts/debug.py
 PUMA/debug.py

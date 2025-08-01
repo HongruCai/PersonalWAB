@@ -1,8 +1,7 @@
 deepspeed --master_port=29500 dpo_llama.py \
     --data_path output/res/ \
     --output_dir output/dpo \
-    --model_name output/merged_model \
-    --model_path output/input/Llama-2-7b-chat-hf/ \
+    --model_name output/input/Llama-2-7b-chat-hf/xxx \
     --train_epoch 5 \
     --learning_rate 5e-5 \
     --train_batch_size 1 \

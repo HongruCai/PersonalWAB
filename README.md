@@ -86,41 +86,54 @@ For more detailed information, refer to our paper.
 
 ### Training PUMA
 
-STEP 1: Prepare the SFT dataset  
+**STEP 1: Prepare the SFT dataset.**
+
+You may need to copy the 'user_interactions.json' and 'user_history.json' files from the PersonalWAB benchmark.    
 ```bash
 cd PUMA
 bash scripts/pre_sft_func_data.sh
 bash scripts/pre_sft_param_data.sh
 ```
-STEP 2: Train the LLaMA model with SFT  
+**STEP 2: Train the LLaMA model with SFT**  
+
+There are three options for training: function, parameter, or both, which means SFT on function data, parameter data, or both function and parameter. You can specify in the script.
 ```bash
 bash scripts/finetune_function_param.sh
 ```
-STEP 3: Generate function results and parameters for DPO  
+**STEP 3: Generate function results and diverse parameter predictions for DPO** 
+
+This step generates the function predictions and diverse parameter predictions for DPO training. The function results will be used to select the appropriate Web functions, while the parameter results are parameters for the selected functions. You may need to generate on training and test set separately by specifying the split.
 ```bash
 bash scripts/generate_function.sh
 bash scripts/generate_param_dpo.sh
 ```
-STEP 4: Evaluate the parameter results in PersonalWAB  
+**STEP 4: Evaluate the parameter results in PersonalWAB**  
+
+This step evaluates the parameter results in the PersonalWAB benchmark. It will score the parameter results in the PersonalWAB benchmark, which will be used in the DPO training.
 ```bash
 cd ..
 bash scripts/fast_test_dpo.sh
 ```
-STEP 5: Prepare the DPO dataset  
+**STEP 5: Prepare the DPO dataset**  
+
+This step prepares the DPO dataset by choosing the highest and lowest parameter results from the previous step. 
 ```bash
 cd PUMA
 bash scripts/pre_dpo_data.sh
 ```
-STEP 6: Train with DPO    
+**STEP 6: Train with DPO**  
+
+This step trains the model with DPO using the prepared DPO dataset. You need to first merge the LoRA adapter saved in SFT with base model, and then train the DPO model with the merged model.
 ```bash
+bash scripts/merge.sh
 bash scripts/dpo_llama.sh
 ```
-STEP 7: Evaluate the DPO model in PersonalWAB  
+**STEP 7: Evaluate the DPO model in PersonalWAB**  
+This step evaluates the final DPO model in the PersonalWAB benchmark. But you can also use the model to generate the final function and parameter results (as in step 3)and use scripts/fast_test.sh to see the performance.
 ```bash
 cd ..
 bash scripts/run_singleturn_puma.sh
 ```
-Or you can also generate the final function and parameter results and use scripts/fast_test.sh to see the performance without recording the single instruction results.
 
 ## 📚 Citation
 

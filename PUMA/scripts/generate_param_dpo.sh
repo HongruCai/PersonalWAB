@@ -1,11 +1,15 @@
 accelerate launch test_llama.py \
-    --model_path output/dpo/merged_model/ \
-    --base_model output/merged_model \
-    --data_path data/tool_input_data3.json \
-    --float16 \
+    --model_path output/param/Llama-2-7b-chat-hf/xx \
+    --base_model meta-llama/Llama-2-7b-chat-h \
+    --data_path data/param_data.json \
+    --bf16 \
     --test_on param \
     --batch_size 4 \
     --max_new_tokens 256 \
     --memory_token_length 768 \
-    --tool_file output/ \
-    --res_file output/
+    --tool_file output/res/function_res.json \
+    --res_file output/res/param_res.json \
+    --num_beams 10 \
+    --temperature 1.5 \
+    --do_sample \
+    --split train \
