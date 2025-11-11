@@ -2,7 +2,7 @@
 
 ## 🔍 Overview
 
-LLM-based Web agents overlook the importance of personalized data (e.g., user profiles and historical Web behaviors) in assisting the nderstanding of users' personalized instructions and executing customized actions. **PersonalWAB** (Personalized Web Agent Benchmark) serves as the first comprehensive benchmark designed to evaluate Web agents on tasks such as personalized search, recommendation, and review generation. The benchmark includes a set of personalized user data, Web functions, and evaluation paradigms that facilitate the development of more personalized Web agents.
+LLM-based Web agents overlook the importance of personalized data (e.g., user profiles and historical Web behaviors) in assisting the understanding of users' personalized instructions and executing customized actions. **PersonalWAB** (Personalized Web Agent Benchmark) serves as the first comprehensive benchmark designed to evaluate Web agents on tasks such as personalized search, recommendation, and review generation. The benchmark includes a set of personalized user data, Web functions, and evaluation paradigms that facilitate the development of more personalized Web agents.
 **PUMA** (Personalized User Memory-enhanced Alignment) is a framework developed to adapt LLMs to the personalized Web agent task. By leveraging a memory bank and task-specific retrieval strategies, PUMA filters relevant historical Web behaviors, enabling fine-tuned and optimized personalized action execution.
 
 
